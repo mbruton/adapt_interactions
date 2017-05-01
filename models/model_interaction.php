@@ -74,5 +74,19 @@ namespace adapt\interactions{
             
             return null;
         }
+        
+        /* Over-ride the initialiser to auto load children */
+        public function initialise(){
+            /* We must initialise first! */
+            parent::initialise();
+            
+            /* We need to limit what we auto load */
+            $this->_auto_load_only_tables = array(
+                'interaction_data'
+            );
+            
+            /* Switch on auto loading */
+            $this->_auto_load_children = true;
+        }
     }
 }

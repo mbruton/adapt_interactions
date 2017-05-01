@@ -41,12 +41,12 @@
                 </table>
                 <table name="interaction">
                     <field name="interaction_id" data-type="bigint" key="primary" auto-increment="Yes" label="Interaction #" />
-                    <field name="interaction_type_id" data-type="bigint" referenced-table-name="interaction_type" referenced-field-name="interaction_type_id" label="Interaction type #" />
+                    <field name="interaction_type_id" data-type="bigint" key="foreign" referenced-table-name="interaction_type" referenced-field-name="interaction_type_id" label="Interaction type #" />
                     <field name="user_id" data-type="bigint" referenced-table-name="user" referenced-field-name="user_id" label="User #" />
                 </table>
                 <table name="interaction_data">
                     <field name="interaction_data_id" data-type="bigint" key="primary" auto-increment="Yes" label="Interaction data #" />
-                    <field name="interaction_id" data-type="bigint" referenced-table-name="interaction" referenced-field-name="interaction_id" label="Interaction #" />
+                    <field name="interaction_id" data-type="bigint" key="foreign" referenced-table-name="interaction" referenced-field-name="interaction_id" label="Interaction #" />
                     <field name="data_key" index="Yes" index-size="64" data-type="varchar" max-length="64" nullable="No" label="Key" />
                     <field name="data" data-type="text" label="Data" />
                     <field name="is_serialize" data-type="enum('Yes', 'No')" default-value="No" label="Is the data serialized?" />
